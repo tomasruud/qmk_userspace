@@ -70,16 +70,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   update_swapper(&sw_app_active, KC_LGUI, KC_TAB, SW_APP, keycode, record);
   update_swapper(&sw_win_active, KC_LGUI, NO_LABK, SW_WIN, keycode, record);
 
-  switch (keycode) {
-    case LA_NUMS:
-      // A little trick to not repeat space when layer key is held.
-      if (record->tap.count && record->event.pressed) {
-        tap_code(KC_SPC);
-        return false;
-      }
-      break;
-  }
-
   return true;
 }
 
