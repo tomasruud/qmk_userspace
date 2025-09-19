@@ -1,13 +1,16 @@
 #pragma once
 
-#include QMK_KEYBOARD_H
+#include "quantum.h"
 
-#define HOLD_ON_OTHER_KEY_PRESS
+enum layers {
+    DEF,
+    NAV,
+    NUM,
+    SYM,
+    FUN,
+};
 
-// Key definitions for Norwegian MacOS layout
-
-#define __TODO__ KC_NO
-
+// Key definitions for Norwegian macOS layout using ANSI layout.
 #define NO_1 KC_1             // 1
 #define NO_2 KC_2             // 2
 #define NO_3 KC_3             // 3
@@ -83,6 +86,8 @@
 #define NO_PLUS KC_MINS       // +
 #define NO_QUES S(KC_MINS)    // ?
 
+#define EMOJI G(C(KC_SPC)) // Emoji
+
 #define TR_TMUX C(NO_A) // Tmux trigger
 #define TR_SCDN C(NO_D) // Scroll down
 #define TR_SCUP C(NO_U) // Scroll up
@@ -90,33 +95,46 @@
 #define TR_JMPB C(NO_O) // Jump backwards
 #define TR_COPY G(NO_C) // Copy
 #define TR_PAST G(NO_V) // Paste
-
 #define TR_WCTR C(S(A(NO_G))) // Center window
 #define TR_WGRW C(S(A(NO_M))) // Maximise window
 
 #define SW_NTAB C(KC_TAB)    // Next tab
 #define SW_PTAB C(S(KC_TAB)) // Prev tab
-#define EMOJI G(C(KC_SPC))   // Emoji
-
-#define LA_NAV MO(NAV)         // Navigation layer
-#define LA_NUMS LT(NUM, KC_SPC) // Number layer
-#define LA_NUME LT(NUM, KC_ENT) // Number layer
-
-#define OS_SHFT OSM(MOD_LSFT)
-#define OS_CTRL OSM(MOD_LCTL)
-#define OS_ALT OSM(MOD_LALT)
-#define OS_GUI OSM(MOD_LGUI)
-#define OS_RGUI OSM(MOD_RGUI)
 
 enum keycodes {
-  SW_APP = SAFE_RANGE, // Switch to next app (cmd-tab)
-  SW_WIN, // Switch to next window (cmd-<)
+    SW_APP = SAFE_RANGE, // Switch to next app (cmd-tab)
+    SW_WIN,              // Switch to next window (cmd-<)
 };
 
-enum layers {
-  DEF,
-  NAV,
-  NUM,
-  SYM,
-  CFG,
-};
+// clang-format off
+#define SPLIT_DEF_LAYER \
+NO_Q    ,NO_W    ,NO_E    ,NO_R    ,NO_T    ,        NO_Y    ,NO_U    ,NO_I    ,NO_O    ,NO_P    ,\
+NO_A    ,NO_S    ,NO_D    ,NO_F    ,NO_G    ,        NO_H    ,NO_J    ,NO_K    ,NO_L    ,NO_OSTR ,\
+NO_Z    ,NO_X    ,NO_C    ,NO_V    ,NO_B    ,        NO_N    ,NO_M    ,NO_ARNG ,NO_AE   ,MO(FUN) ,\
+                                    MO(NAV) ,     LT(NUM, KC_SPC)
+
+#define SPLIT_NAV_LAYER \
+XXXXXXX ,XXXXXXX ,SW_PTAB ,SW_NTAB ,CW_TOGG ,        KC_ESC  ,KC_PGDN ,KC_PGUP ,TR_JMPF ,TR_JMPB ,\
+OS_LALT ,OS_LGUI ,OS_LCTL ,OS_LSFT ,TR_COPY ,        KC_LEFT ,KC_DOWN ,KC_UP   ,KC_RGHT ,XXXXXXX ,\
+EMOJI   ,SW_WIN  ,SW_APP  ,TR_TMUX ,TR_PAST ,        KC_TAB  ,KC_HOME ,KC_END  ,TR_WCTR ,TR_WGRW ,\
+                                    _______ ,     LT(NUM, KC_ENT)
+
+#define SPLIT_NUM_LAYER \
+XXXXXXX ,NO_7    ,NO_8    ,NO_9    ,NO_COMM ,        NO_CIRC ,NO_TILD ,NO_ACUT ,NO_GRV  ,NO_UMLA ,\
+XXXXXXX ,NO_4    ,NO_5    ,NO_6    ,NO_DOT  ,        KC_BSPC ,OS_RSFT ,OS_RCTL ,OS_RGUI ,OS_RALT ,\
+XXXXXXX ,NO_1    ,NO_2    ,NO_3    ,NO_0    ,        XXXXXXX ,NO_CLON ,XXXXXXX ,XXXXXXX ,XXXXXXX ,\
+                                    _______ ,        _______
+
+#define SPLIT_SYM_LAYER \
+XXXXXXX ,NO_HASH ,NO_DQOU ,NO_QUES ,NO_EXLM ,        NO_AMPR ,NO_LPAR ,NO_RPAR ,NO_SLSH ,XXXXXXX ,\
+NO_DLR  ,NO_ASTR ,NO_QUOT ,NO_SEMI ,NO_MINS ,        NO_EQL  ,NO_LCBR ,NO_RCBR ,NO_PIPE ,XXXXXXX ,\
+NO_PERC ,NO_LABK ,NO_RABK ,NO_PLUS ,NO_USCR ,        NO_AT   ,NO_LBRC ,NO_RBRC ,NO_BLSH ,XXXXXXX ,\
+                                    _______ ,        _______
+
+#define SPLIT_FUN_LAYER \
+XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,        XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,QK_BOOT ,\
+XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,        XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,\
+XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,        XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,_______ ,\
+                                    _______ ,        _______
+
+
