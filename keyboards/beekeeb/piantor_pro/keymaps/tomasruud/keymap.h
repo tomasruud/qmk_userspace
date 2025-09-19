@@ -78,6 +78,7 @@
 #define NO_ACUT KC_EQL        // ` (dead)
 #define NO_GRV S(KC_EQL)      // ´ (dead)
 #define NO_CIRC S(KC_RBRC)    // ^ (dead)
+#define NO_UMLA KC_RBRC       // ¨ (dead)
 #define NO_EQL S(KC_0)        // =
 #define NO_PLUS KC_MINS       // +
 #define NO_QUES S(KC_MINS)    // ?

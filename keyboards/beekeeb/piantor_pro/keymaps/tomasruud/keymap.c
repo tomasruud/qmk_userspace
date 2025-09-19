@@ -29,7 +29,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [NUM] = LAYOUT_split_3x6_3(
     // ╭────────┬────────┬────────┬────────┬────────┬────────╮                     ╭────────┬────────┬────────┬────────┬────────┬────────╮
-        XXXXXXX ,XXXXXXX ,NO_7    ,NO_8    ,NO_9    ,NO_COMM ,                      NO_CIRC ,NO_TILD ,NO_ACUT ,NO_GRV  ,XXXXXXX ,XXXXXXX ,
+        XXXXXXX ,XXXXXXX ,NO_7    ,NO_8    ,NO_9    ,NO_COMM ,                      NO_CIRC ,NO_TILD ,NO_ACUT ,NO_GRV  ,NO_UMLA ,XXXXXXX ,
     // ├────────┼────────┼────────┼────────┼────────┼────────┤                     ├────────┼────────┼────────┼────────┼────────┼────────┤
         XXXXXXX ,XXXXXXX ,NO_4    ,NO_5    ,NO_6    ,NO_DOT  ,                      KC_BSPC ,OS_SHFT ,OS_CTRL ,OS_RGUI ,OS_ALT  ,XXXXXXX ,
     // ├────────┼────────┼────────┼────────┼────────┼────────┤                     ├────────┼────────┼────────┼────────┼────────┼────────┤
