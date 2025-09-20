@@ -1,4 +1,4 @@
-#include "tomasruud.h"
+#include "tomas.h"
 #include "swapper.h"
 
 bool sw_app_active = false;
