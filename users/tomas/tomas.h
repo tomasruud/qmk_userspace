@@ -60,9 +60,9 @@ enum keycodes {
 )
 
 #define SPLIT_FUN_LAYER(APPLY) APPLY(                                                                 \
-    XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,        XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,QK_BOOT ,\
-    XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,        XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,\
-    XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,        XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,_______ ,\
+    XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,DT_PRNT ,        XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,QK_BOOT ,\
+    XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,DT_UP   ,        XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,\
+    XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,DT_DOWN ,        XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,_______ ,\
                                         _______ ,        _______                                      \
 )
 
