@@ -45,3 +45,13 @@ bool caps_word_press_user(uint16_t keycode) {
             return false; // Deactivate Caps Word.
     }
 }
+
+uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case KC_SPC:
+        case LT(NUM, KC_SPC):
+            return 0;
+        default:
+            return QUICK_TAP_TERM;
+    }
+}
