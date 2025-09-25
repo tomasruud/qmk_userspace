@@ -1,0 +1,167 @@
+layout: {ortho_layout: {split: true, rows: 3, columns: 5, thumbs: 1}}
+layers:
+  DEF:  
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - Ø
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - Å
+  - Æ
+  - {hold: FUN}
+  - {hold: NAV}
+  - {tap: SPC, hold: NUM}
+  NAV:
+  - ''
+  - Repeat last
+  - Prev tab
+  - Next tab
+  - Caps word
+  - Esc
+  - Page down
+  - Page up
+  - Ctrl+i (vim)
+  - Ctrl+o (vim)
+  - OS left opt
+  - OS left cmd
+  - OS left ctrl
+  - OS left shift
+  - Copy
+  - Left
+  - Down
+  - Up
+  - Right
+  - ''
+  - Emoji
+  - Switch window
+  - Switch app
+  - Tmux leader
+  - Paste
+  - Tab
+  - Home
+  - End
+  - Center window
+  - Maximize window
+  - {hold: NAV, type: held}
+  - {tap: Enter, hold: SYM}
+  NUM:
+  - ''
+  - 7
+  - 8
+  - 9
+  - ','
+  - '^ (dead)'
+  - '~ (dead)'
+  - '´ (dead)'
+  - '` (dead)'
+  - '¨ (dead)'
+  - ''
+  - 4
+  - 5
+  - 6
+  - .
+  - Backspace
+  - OS right shift
+  - OS right ctrl
+  - OS right cmd
+  - OS right opt
+  - ''
+  - 1
+  - 2
+  - 3
+  - 0
+  - ''
+  - ':'
+  - ''
+  - ''
+  - ''
+  - {hold: SYM}
+  - {hold: NUM, type: held}
+  SYM:
+  - ''
+  - '#'
+  - '"'
+  - '?'
+  - '!'
+  - '&'
+  - (
+  - )
+  - /
+  - ''
+  - $
+  - '*'
+  - ''''
+  - ;
+  - '-'
+  - '='
+  - '{'
+  - '}'
+  - '|'
+  - ''
+  - '%'
+  - <
+  - '>'
+  - +
+  - _
+  - '@'
+  - '['
+  - ']'
+  - \
+  - ''
+  - {hold: SYM, type: held}
+  - {hold: SYM, type: held}
+  FUN:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - Boot
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {hold: FUN, type: held}
+  - ''
+  - ''
