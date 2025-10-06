@@ -2,6 +2,7 @@
 
 #include "quantum.h"
 #include "norwegian-ansi.h"
+#include "oneshot.h"
 
 enum layers {
     DEF,
