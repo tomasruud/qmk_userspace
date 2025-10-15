@@ -5,10 +5,6 @@
 bool sw_app_active = false;
 bool sw_win_active = false;
 
-__attribute__((weak)) bool process_record_user_keymap(uint16_t keycode, keyrecord_t *record) {
-    return true;
-}
-
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     update_swapper(&sw_app_active, KC_LGUI, KC_TAB, SW_APP, keycode, record);
     update_swapper(&sw_win_active, KC_LGUI, NO_LABK, SW_WIN, keycode, record);
@@ -21,7 +17,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
     }
 
-    return process_record_user_keymap(keycode, record);
+    return true;
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {

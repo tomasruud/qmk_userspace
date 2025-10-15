@@ -10,7 +10,7 @@ enum extra_layers {
 
 // clang-format off
 #define LAYOUT_LAYER_POINTER LAYOUT(                                                                  \
-    XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,        KC_ESC  ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,\
+    XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,        TG(PTR) ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,\
     XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,        XXXXXXX ,DRG_TOG ,XXXXXXX ,XXXXXXX ,XXXXXXX ,\
     XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,        XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,\
                       XXXXXXX ,XXXXXXX ,XXXXXXX ,        KC_BTN1 ,KC_BTN2                             \
@@ -47,28 +47,4 @@ report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
         }
     }
     return mouse_report;
-}
-
-bool process_record_user_keymap(uint16_t keycode, keyrecord_t *record) {
-    if (record->event.pressed && keycode == KC_ESC) {
-        // Cancel snipe mode if active.
-        if (charybdis_get_pointer_sniping_enabled()) {
-            charybdis_set_pointer_sniping_enabled(false);
-            return false; // swallow Esc (use it purely as "cancel")
-        }
-
-        // Cancel scroll mode if active.
-        if (charybdis_get_pointer_dragscroll_enabled()) {
-            charybdis_set_pointer_dragscroll_enabled(false);
-            return false; // swallow Esc (use it purely as "cancel")
-        }
-
-        // Cancel pointer layer if escape is pressed.
-        if (IS_LAYER_ON(PTR)) {
-            layer_off(PTR);
-            return false; // swallow Esc (use it purely as "cancel")
-        }
-    }
-
-    return true;
 }
