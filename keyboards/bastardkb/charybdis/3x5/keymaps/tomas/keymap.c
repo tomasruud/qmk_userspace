@@ -1,7 +1,8 @@
 #include QMK_KEYBOARD_H
 #include "tomas.h"
 
-#define CHARYBDIS_MINIMUM_DEFAULT_DPI 400
+#define CHARYBDIS_MINIMUM_DEFAULT_DPI 800
+#define CHARYBDIS_DRAGSCROLL_REVERSE_Y true
 #define PTR_TRIGGER_THRESHOLD 8
 
 enum extra_layers {
@@ -10,10 +11,10 @@ enum extra_layers {
 
 // clang-format off
 #define LAYOUT_LAYER_POINTER LAYOUT(                                                                  \
-    XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,        TG(PTR) ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,\
-    XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,        XXXXXXX ,DRG_TOG ,XXXXXXX ,XXXXXXX ,XXXXXXX ,\
+    XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,        TG(PTR) ,XXXXXXX ,XXXXXXX ,XXXXXXX ,DPI_MOD ,\
+    XXXXXXX ,XXXXXXX ,XXXXXXX ,DRGSCRL ,XXXXXXX ,        XXXXXXX ,DRGSCRL ,XXXXXXX ,XXXXXXX ,DPI_RMOD,\
     XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,        XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,\
-                      XXXXXXX ,XXXXXXX ,XXXXXXX ,        KC_BTN1 ,KC_BTN2                             \
+                      XXXXXXX ,KC_BTN1 ,KC_BTN2 ,        KC_BTN2 ,KC_BTN1                             \
 )
 
 #define APPLY_LAYOUT(                        \
