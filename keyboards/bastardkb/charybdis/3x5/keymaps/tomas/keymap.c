@@ -2,8 +2,8 @@
 #include "tomas.h"
 
 #define CHARYBDIS_MINIMUM_DEFAULT_DPI 800
-#define CHARYBDIS_DRAGSCROLL_REVERSE_Y true
-#define PTR_TRIGGER_THRESHOLD 8
+#define CHARYBDIS_DRAGSCROLL_REVERSE_Y
+#define PTR_TRIGGER_THRESHOLD 2
 
 enum extra_layers {
     PTR = FUN + 1,
