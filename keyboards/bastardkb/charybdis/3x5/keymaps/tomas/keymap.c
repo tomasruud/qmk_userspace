@@ -14,7 +14,7 @@ enum extra_layers {
     XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,        TG(PTR) ,XXXXXXX ,XXXXXXX ,XXXXXXX ,DPI_MOD ,\
     XXXXXXX ,XXXXXXX ,XXXXXXX ,DRGSCRL ,XXXXXXX ,        XXXXXXX ,DRGSCRL ,XXXXXXX ,XXXXXXX ,DPI_RMOD,\
     XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,        XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,\
-                      XXXXXXX ,KC_BTN1 ,KC_BTN2 ,        KC_BTN2 ,KC_BTN1                             \
+                      TG(PTR) ,KC_BTN1 ,KC_BTN2 ,        KC_BTN2 ,KC_BTN1                             \
 )
 
 #define APPLY_LAYOUT(                        \
