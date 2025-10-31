@@ -5,11 +5,12 @@
 #include "oneshot.h"
 
 enum layers {
-    DEF,
-    NAV,
-    NUM,
-    SYM,
-    FUN,
+    DEF, // Qwerty default layer
+    CDH, // Colemak DH default layer
+    NAV, // Navigation and util layer
+    NUM, // Number and some symbols layer
+    SYM, // Symbols layer
+    FUN, // Misc functions layer
 };
 
 #define TR_EMOJ G(C(KC_SPC))  // Emoji
@@ -29,6 +30,7 @@ enum layers {
 enum keycodes {
     SW_APP = SAFE_RANGE, // Switch to next app (cmd-tab)
     SW_WIN,              // Switch to next window (cmd-<)
+    KEYMAP_SAFE_RANGE,
 };
 
 #define NUM_SPC LT(NUM, KC_SPC)
@@ -39,6 +41,13 @@ enum keycodes {
     NO_Q    ,NO_W    ,NO_E    ,NO_R    ,NO_T    ,        NO_Y    ,NO_U    ,NO_I    ,NO_O    ,NO_P    ,\
     NO_A    ,NO_S    ,NO_D    ,NO_F    ,NO_G    ,        NO_H    ,NO_J    ,NO_K    ,NO_L    ,NO_OSTR ,\
     NO_Z    ,NO_X    ,NO_C    ,NO_V    ,NO_B    ,        NO_N    ,NO_M    ,NO_ARNG ,NO_AE   ,MO(FUN) ,\
+                                        MO(NAV) ,        NUM_SPC                                      \
+)
+
+#define SPLIT_CDH_LAYER(APPLY) APPLY(                                                                 \
+    NO_Q    ,NO_W    ,NO_F    ,NO_P    ,NO_B    ,        NO_J    ,NO_L    ,NO_U    ,NO_Y    ,NO_OSTR ,\
+    NO_A    ,NO_R    ,NO_S    ,NO_T    ,NO_G    ,        NO_M    ,NO_N    ,NO_E    ,NO_I    ,NO_O    ,\
+    NO_Z    ,NO_X    ,NO_C    ,NO_D    ,NO_V    ,        NO_K    ,NO_H    ,NO_ARNG ,NO_AE   ,MO(FUN) ,\
                                         MO(NAV) ,        NUM_SPC                                      \
 )
 
@@ -64,8 +73,8 @@ enum keycodes {
 )
 
 #define SPLIT_FUN_LAYER(APPLY) APPLY(                                                                 \
-    XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,DT_PRNT ,        XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,QK_BOOT ,\
-    XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,DT_UP   ,        XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,\
+    XXXXXXX ,XXXXXXX ,XXXXXXX ,DF(DEF) ,DT_PRNT ,        XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,QK_BOOT ,\
+    XXXXXXX ,XXXXXXX ,XXXXXXX ,DF(CDH) ,DT_UP   ,        XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,\
     XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,DT_DOWN ,        XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,_______ ,\
                                         XXXXXXX ,        XXXXXXX                                      \
 )

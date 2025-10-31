@@ -14,7 +14,7 @@ enum extra_layers {
     XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,        TG(PTR) ,XXXXXXX ,XXXXXXX ,XXXXXXX ,DPI_MOD ,\
     XXXXXXX ,XXXXXXX ,XXXXXXX ,DRGSCRL ,XXXXXXX ,        XXXXXXX ,DRGSCRL ,XXXXXXX ,XXXXXXX ,DPI_RMOD,\
     XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,        XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,\
-                      TG(PTR) ,KC_BTN1 ,KC_BTN2 ,        DRGSCRL ,KC_BTN1                             \
+                      TG(PTR) ,KC_BTN1 ,KC_BTN2 ,        KC_BTN2 ,KC_BTN1                             \
 )
 
 #define APPLY_LAYOUT(                        \
@@ -32,6 +32,7 @@ LAYOUT(                                      \
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [DEF] = SPLIT_DEF_LAYER(APPLY_LAYOUT),
+    [CDH] = SPLIT_CDH_LAYER(APPLY_LAYOUT),
     [NAV] = SPLIT_NAV_LAYER(APPLY_LAYOUT),
     [NUM] = SPLIT_NUM_LAYER(APPLY_LAYOUT),
     [SYM] = SPLIT_SYM_LAYER(APPLY_LAYOUT),
