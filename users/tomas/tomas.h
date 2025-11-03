@@ -67,8 +67,8 @@ enum keycodes {
 
 #define SPLIT_SYM_LAYER(APPLY) APPLY(                                                                 \
     XXXXXXX ,NO_HASH ,NO_DQOU ,NO_QUES ,NO_EXLM ,        NO_AMPR ,NO_LPAR ,NO_RPAR ,NO_SLSH ,XXXXXXX ,\
-    NO_DLR  ,NO_ASTR ,NO_QUOT ,NO_SEMI ,NO_MINS ,        NO_EQL  ,NO_LCBR ,NO_RCBR ,NO_PIPE ,XXXXXXX ,\
-    NO_PERC ,NO_LABK ,NO_RABK ,NO_PLUS ,NO_USCR ,        NO_AT   ,NO_LBRC ,NO_RBRC ,NO_BLSH ,XXXXXXX ,\
+    NO_DLR  ,NO_ASTR ,NO_QUOT ,NO_SEMI ,NO_MINS ,        NO_EQL  ,NO_LCBR ,NO_RCBR ,NO_PIPE ,NO_PERC ,\
+    XXXXXXX ,NO_LABK ,NO_RABK ,NO_PLUS ,NO_USCR ,        NO_AT   ,NO_LBRC ,NO_RBRC ,NO_BLSH ,XXXXXXX ,\
                                         _______ ,        _______                                      \
 )
 
