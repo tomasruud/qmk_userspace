@@ -11,10 +11,10 @@ enum extra_layers {
 
 // clang-format off
 #define LAYOUT_LAYER_POINTER LAYOUT(                                                                  \
-    XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,        TG(PTR) ,XXXXXXX ,XXXXXXX ,XXXXXXX ,DPI_MOD ,\
-    XXXXXXX ,XXXXXXX ,XXXXXXX ,DRGSCRL ,XXXXXXX ,        XXXXXXX ,DRGSCRL ,XXXXXXX ,XXXXXXX ,DPI_RMOD,\
+    XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,        XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,DPI_MOD ,\
+    KC_LALT ,KC_LGUI ,KC_LCTL ,KC_LSFT ,XXXXXXX ,        XXXXXXX ,DRGSCRL ,XXXXXXX ,XXXXXXX ,DPI_RMOD,\
     XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,        XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,\
-                      TG(PTR) ,KC_BTN1 ,KC_BTN2 ,        KC_BTN2 ,KC_BTN1                             \
+                      TG(PTR) ,TG(PTR) ,DRGSCRL ,        KC_BTN2 ,KC_BTN1                             \
 )
 
 #define APPLY_LAYOUT(                        \
