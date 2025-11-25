@@ -2,7 +2,6 @@
 #include "tomas.h"
 
 #define CHARYBDIS_MINIMUM_DEFAULT_DPI 200
-#define CHARYBDIS_DRAGSCROLL_REVERSE_Y
 #define PTR_TRIGGER_THRESHOLD 2
 
 enum extra_layers {
@@ -48,5 +47,9 @@ report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
             layer_on(PTR);
         }
     }
+
+    // Invert Y scroll
+    mouse_report.v = -mouse_report.v;
+
     return mouse_report;
 }
