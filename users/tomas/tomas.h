@@ -15,8 +15,6 @@ enum layers {
 
 #define TR_EMOJ G(C(KC_SPC))  // Emoji
 #define TR_TMUX C(NO_A)       // Tmux trigger
-#define TR_SCDN C(NO_D)       // Scroll down
-#define TR_SCUP C(NO_U)       // Scroll up
 #define TR_JMPF C(NO_I)       // Jump forwards
 #define TR_JMPB C(NO_O)       // Jump backwards
 #define TR_COPY G(NO_C)       // Copy
@@ -30,7 +28,7 @@ enum layers {
 enum keycodes {
     SW_APP = SAFE_RANGE, // Switch to next app (cmd-tab)
     SW_WIN,              // Switch to next window (cmd-<)
-    KEYMAP_SAFE_RANGE,
+    KEYMAP_SAFE_RANGE,   // Can be referenced by specific keymaps for adding additional keys
 };
 
 #define NUM_SPC LT(NUM, KC_SPC)

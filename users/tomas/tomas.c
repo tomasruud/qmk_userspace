@@ -5,6 +5,7 @@
 bool sw_app_active = false;
 bool sw_win_active = false;
 
+// Can be overridden by specific keyboard keymaps for adding additional logic
 __attribute__((weak)) bool process_record_user_keymap(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
