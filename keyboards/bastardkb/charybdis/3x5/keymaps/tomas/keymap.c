@@ -8,12 +8,16 @@ enum extra_layers {
     PTR = FUN + 1,
 };
 
+enum extra_keycodes {
+    TR_EXPT = KEYMAP_SAFE_RANGE, // Exit pointer layer
+};
+
 // clang-format off
 #define LAYOUT_LAYER_POINTER LAYOUT(                                                                  \
     XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,        XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,DPI_MOD ,\
     KC_LALT ,KC_LGUI ,KC_LCTL ,KC_LSFT ,XXXXXXX ,        XXXXXXX ,DRGSCRL ,XXXXXXX ,XXXXXXX ,DPI_RMOD,\
     XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,        XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,\
-                      TG(PTR) ,TG(PTR) ,DRGSCRL ,        KC_BTN2 ,KC_BTN1                             \
+                      XXXXXXX ,TR_EXPT ,DRGSCRL ,        KC_BTN2 ,KC_BTN1                             \
 )
 
 #define APPLY_LAYOUT(                        \
@@ -52,4 +56,17 @@ report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
     mouse_report.v = -mouse_report.v;
 
     return mouse_report;
+}
+
+bool process_record_user_keymap(uint16_t keycode, keyrecord_t *record) {
+    if (record->event.pressed && keycode == TR_EXPT) {
+        // Exit pointer layer on keydown to avoid having to press twice. Without
+        // this, you have to push the button first one time to toggle the layer
+        // off, and then again to trigger the new keycode.
+        if (IS_LAYER_ON(PTR)) {
+            layer_off(PTR);
+        }
+    }
+
+    return true;
 }
