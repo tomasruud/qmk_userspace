@@ -55,7 +55,9 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case KC_SPC:
         case NUM_SPC:
-            // Disable quick tap for space/layer toggle to prevent toggling when
+        case KC_ENT:
+        case NUM_ENT:
+            // Disable quick tap for space/enter/layer toggle to prevent toggling when
             // doing <space>- for instance.
             return 0;
         default:
