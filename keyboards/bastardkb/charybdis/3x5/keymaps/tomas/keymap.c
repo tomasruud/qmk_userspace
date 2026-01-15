@@ -1,3 +1,4 @@
+#include "action.h"
 #include QMK_KEYBOARD_H
 #include "tomas.h"
 
@@ -35,7 +36,6 @@ LAYOUT(                                      \
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [DEF] = SPLIT_DEF_LAYER(APPLY_LAYOUT),
-    [CDH] = SPLIT_CDH_LAYER(APPLY_LAYOUT),
     [NAV] = SPLIT_NAV_LAYER(APPLY_LAYOUT),
     [NUM] = SPLIT_NUM_LAYER(APPLY_LAYOUT),
     [SYM] = SPLIT_SYM_LAYER(APPLY_LAYOUT),
@@ -60,6 +60,9 @@ report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
 
 bool process_record_user_keymap(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed && keycode == PTR_EXT) {
+        // Unregister the exit key to make sure the mouse layer is fully off.
+        unregister_code(keycode);
+
         // Exit pointer layer on keydown to avoid having to press twice. Without
         // this, you have to push the button first one time to toggle the layer
         // off, and then again to trigger the new keycode.

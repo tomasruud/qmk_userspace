@@ -6,7 +6,6 @@
 
 enum layers {
     DEF, // Qwerty default layer
-    CDH, // Colemak DH default layer
     NAV, // Navigation and util layer
     NUM, // Number and some symbols layer
     SYM, // Symbols layer
@@ -42,13 +41,6 @@ enum keycodes {
                                         MO(NAV) ,        NUM_SPC                                      \
 )
 
-#define SPLIT_CDH_LAYER(APPLY) APPLY(                                                                 \
-    NO_Q    ,NO_W    ,NO_F    ,NO_P    ,NO_B    ,        NO_J    ,NO_L    ,NO_U    ,NO_Y    ,NO_OSTR ,\
-    NO_A    ,NO_R    ,NO_S    ,NO_T    ,NO_G    ,        NO_M    ,NO_N    ,NO_E    ,NO_I    ,NO_O    ,\
-    NO_Z    ,NO_X    ,NO_C    ,NO_D    ,NO_V    ,        NO_K    ,NO_H    ,NO_ARNG ,NO_AE   ,MO(FUN) ,\
-                                        MO(NAV) ,        NUM_SPC                                      \
-)
-
 #define SPLIT_NAV_LAYER(APPLY) APPLY(                                                                 \
     XXXXXXX ,QK_REP  ,SW_PTAB ,SW_NTAB ,CW_TOGG ,        KC_ESC  ,KC_PGDN ,KC_PGUP ,TR_JMPF ,TR_JMPB ,\
     OS_LALT ,OS_LGUI ,OS_LCTL ,OS_LSFT ,TR_COPY ,        KC_LEFT ,KC_DOWN ,KC_UP   ,KC_RGHT ,XXXXXXX ,\
@@ -71,8 +63,8 @@ enum keycodes {
 )
 
 #define SPLIT_FUN_LAYER(APPLY) APPLY(                                                                 \
-    XXXXXXX ,XXXXXXX ,XXXXXXX ,DF(DEF) ,DT_PRNT ,        XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,QK_BOOT ,\
-    XXXXXXX ,XXXXXXX ,XXXXXXX ,DF(CDH) ,DT_UP   ,        XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,\
+    XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,DT_PRNT ,        XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,QK_BOOT ,\
+    XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,DT_UP   ,        XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,\
     XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,DT_DOWN ,        XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,_______ ,\
                                         XXXXXXX ,        XXXXXXX                                      \
 )
