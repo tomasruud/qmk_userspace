@@ -1,9 +1,9 @@
-#include "action.h"
 #include QMK_KEYBOARD_H
 #include "tomas.h"
 
 #define CHARYBDIS_MINIMUM_DEFAULT_DPI 200
 #define PTR_TRIGGER_THRESHOLD 2
+#define MOUSE_REPORT_DELAY_MS 200
 
 enum extra_layers {
     PTR = FUN + 1,
@@ -45,24 +45,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // clang-format on
 
-report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
-    if (abs(mouse_report.x) > PTR_TRIGGER_THRESHOLD || abs(mouse_report.y) > PTR_TRIGGER_THRESHOLD) {
-        if (IS_LAYER_OFF(PTR)) {
-            layer_on(PTR);
-        }
-    }
-
-    // Invert Y scroll
-    mouse_report.v = -mouse_report.v;
-
-    return mouse_report;
-}
+// Timer for tracking keypresses to prevent accidental mouse reporting.
+static uint16_t last_keypress_ms = 0;
 
 bool process_record_user_keymap(uint16_t keycode, keyrecord_t *record) {
-    if (record->event.pressed && keycode == PTR_EXT) {
-        // Unregister the exit key to make sure the mouse layer is fully off.
-        unregister_code(keycode);
+    last_keypress_ms = timer_read();
 
+    if (record->event.pressed && keycode == PTR_EXT) {
         // Exit pointer layer on keydown to avoid having to press twice. Without
         // this, you have to push the button first one time to toggle the layer
         // off, and then again to trigger the new keycode.
@@ -72,4 +61,24 @@ bool process_record_user_keymap(uint16_t keycode, keyrecord_t *record) {
     }
 
     return true;
+}
+
+report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
+    // Ignore mouse reporting if a key was just pressed.
+    if (timer_elapsed(last_keypress_ms) < MOUSE_REPORT_DELAY_MS) {
+        mouse_report.x = 0;
+        mouse_report.y = 0;
+    }
+
+    // Automatically toggles mouse layer when mouse is moved.
+    if (abs(mouse_report.x) > PTR_TRIGGER_THRESHOLD || abs(mouse_report.y) > PTR_TRIGGER_THRESHOLD) {
+        if (IS_LAYER_OFF(PTR)) {
+            layer_on(PTR);
+        }
+    }
+
+    // Invert Y scroll.
+    mouse_report.v = -mouse_report.v;
+
+    return mouse_report;
 }
