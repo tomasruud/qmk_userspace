@@ -17,7 +17,6 @@ LAYOUT_split_3x6_3(                                            \
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [DEF] = SPLIT_DEF_LAYER(APPLY_LAYOUT),
-    [CDH] = SPLIT_CDH_LAYER(APPLY_LAYOUT),
     [NAV] = SPLIT_NAV_LAYER(APPLY_LAYOUT),
     [NUM] = SPLIT_NUM_LAYER(APPLY_LAYOUT),
     [SYM] = SPLIT_SYM_LAYER(APPLY_LAYOUT),
