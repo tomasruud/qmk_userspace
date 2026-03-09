@@ -18,7 +18,7 @@ enum extra_keycodes {
     XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,        XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,DPI_MOD ,\
     KC_LALT ,KC_LGUI ,KC_LCTL ,KC_LSFT ,XXXXXXX ,        XXXXXXX ,DRGSCRL ,XXXXXXX ,XXXXXXX ,DPI_RMOD,\
     XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,        XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,\
-                      XXXXXXX ,PTR_EXT ,DRGSCRL ,        KC_BTN2 ,KC_BTN1                             \
+                      XXXXXXX ,PTR_EXT ,XXXXXXX ,        KC_BTN2 ,KC_BTN1                             \
 )
 
 #define APPLY_LAYOUT(                        \
