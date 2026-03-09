@@ -256,11 +256,13 @@ path.combo { stroke: #7f7f7f; }
 </g>
 <g transform="translate(600, 140)" class="key keypos-29">
 <rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key"/>
+<text x="0" y="0" class="key tap">.</text>
 <a href="#FUN">
 <text x="0" y="24" class="key hold layer-activator">FUN</text>
 </a></g>
 <g transform="translate(270, 196)" class="key keypos-30">
 <rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key"/>
+<text x="0" y="0" class="key tap">ESC</text>
 <a href="#NAV">
 <text x="0" y="24" class="key hold layer-activator">NAV</text>
 </a></g>
@@ -304,7 +306,7 @@ path.combo { stroke: #7f7f7f; }
 </g>
 <g transform="translate(360, 28)" class="key keypos-5">
 <rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key"/>
-<text x="0" y="0" class="key tap">Esc</text>
+<text x="0" y="0" class="key tap">Home</text>
 </g>
 <g transform="translate(420, 28)" class="key keypos-6">
 <rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key"/>
@@ -405,15 +407,14 @@ path.combo { stroke: #7f7f7f; }
 </g>
 <g transform="translate(360, 140)" class="key keypos-25">
 <rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key"/>
-<text x="0" y="0" class="key tap">Tab</text>
+<text x="0" y="0" class="key tap">End</text>
 </g>
 <g transform="translate(420, 140)" class="key keypos-26">
 <rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key"/>
-<text x="0" y="0" class="key tap">Home</text>
+<text x="0" y="0" class="key tap">Tab</text>
 </g>
 <g transform="translate(480, 140)" class="key keypos-27">
 <rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key"/>
-<text x="0" y="0" class="key tap">End</text>
 </g>
 <g transform="translate(540, 140)" class="key keypos-28">
 <rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key"/>
@@ -574,6 +575,7 @@ path.combo { stroke: #7f7f7f; }
 </g>
 <g transform="translate(270, 196)" class="key keypos-30">
 <rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key"/>
+<text x="0" y="0" class="key tap">Esc</text>
 <a href="#SYM">
 <text x="0" y="24" class="key hold layer-activator">SYM</text>
 </a></g>

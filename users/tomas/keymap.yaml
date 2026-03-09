@@ -3,8 +3,8 @@ layers:
   DEF:
     - [Q, W, E, R, T, Y, U, I, O, P]
     - [A, S, D, F, G, H, J, K, L, Ø]
-    - [Z, X, C, V, B, N, M, Å, Æ, { hold: FUN }]
-    - [{ hold: NAV }, { tap: SPC, hold: NUM }]
+    - [Z, X, C, V, B, N, M, Å, Æ, { tap: ".", hold: FUN }]
+    - [{ tap: ESC, hold: NAV }, { tap: SPC, hold: NUM }]
 
   NAV:
     - [
@@ -13,7 +13,7 @@ layers:
         Prev tab,
         Next tab,
         Caps word,
-        Esc,
+        Home,
         Page down,
         Page up,
         Ctrl+i (vim),
@@ -37,9 +37,9 @@ layers:
         Switch app,
         Tmux leader,
         Paste,
-        Tab,
-        Home,
         End,
+        Tab,
+        "",
         Center window,
         Maximize window,
       ]
@@ -71,7 +71,7 @@ layers:
         OS right opt,
       ]
     - ["", 1, 2, 3, 0, "", ":", "", "", ""]
-    - [{ hold: SYM }, { type: held }]
+    - [{ tap: Esc, hold: SYM }, { type: held }]
 
   SYM:
     - ["", "#", '"', "?", "!", "&", (, ), /, ""]
