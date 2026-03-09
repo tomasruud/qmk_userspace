@@ -32,12 +32,13 @@ enum keycodes {
 
 #define NUM_SPC LT(NUM, KC_SPC)
 #define NUM_ENT LT(NUM, KC_ENT)
+#define FUN_DOT LT(FUN, KC_DOT)
 
 // clang-format off
 #define SPLIT_DEF_LAYER(APPLY) APPLY(                                                                 \
     NO_Q    ,NO_W    ,NO_E    ,NO_R    ,NO_T    ,        NO_Y    ,NO_U    ,NO_I    ,NO_O    ,NO_P    ,\
     NO_A    ,NO_S    ,NO_D    ,NO_F    ,NO_G    ,        NO_H    ,NO_J    ,NO_K    ,NO_L    ,NO_OSTR ,\
-    NO_Z    ,NO_X    ,NO_C    ,NO_V    ,NO_B    ,        NO_N    ,NO_M    ,NO_ARNG ,NO_AE   ,MO(FUN) ,\
+    NO_Z    ,NO_X    ,NO_C    ,NO_V    ,NO_B    ,        NO_N    ,NO_M    ,NO_ARNG ,NO_AE   ,FUN_DOT ,\
                                         MO(NAV) ,        NUM_SPC                                      \
 )
 
