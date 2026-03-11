@@ -42,18 +42,18 @@
 #define NO_AE KC_QUOT         // Æ
 #define NO_OSTR KC_SCLN       // Ø
 #define NO_ARNG KC_LBRC       // Å
-#define NO_LCBR S(A(KC_8))    // {
-#define NO_RCBR S(A(KC_9))    // }
+#define NO_LCBR S(RALT(KC_8)) // {
+#define NO_RCBR S(RALT(KC_9)) // }
 #define NO_LPAR S(KC_8)       // (
 #define NO_RPAR S(KC_9)       // )
-#define NO_LBRC A(KC_8)       // [
-#define NO_RBRC A(KC_9)       // ]
+#define NO_LBRC RALT(KC_8)    // [
+#define NO_RBRC RALT(KC_9)    // ]
 #define NO_LABK KC_GRV        // <
 #define NO_RABK S(KC_GRV)     // >
-#define NO_BLSH S(A(KC_7))    // (backslash)
-#define NO_PIPE A(KC_7)       // |
+#define NO_BLSH S(RALT(KC_7)) // (backslash)
+#define NO_PIPE RALT(KC_7)    // |
 #define NO_SLSH S(KC_7)       // /
-#define NO_TILD A(KC_RBRC)    // ~ (dead)
+#define NO_TILD RALT(KC_RBRC) // ~ (dead)
 #define NO_QUOT KC_NUBS       // '
 #define NO_DQOU S(KC_2)       // "
 #define NO_HASH S(KC_3)       // #
